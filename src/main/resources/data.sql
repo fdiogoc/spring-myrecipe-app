@@ -3,10 +3,13 @@ INSERT INTO category (description) VALUES ('Italian');
 INSERT INTO category (description) VALUES ('Mexican');
 INSERT INTO category (description) VALUES ('Fast Food');
 INSERT INTO category (description) VALUES ('Brasilian');
-INSERT INTO category (description) VALUES ('American');
 INSERT INTO unit_of_measure (description) VALUES ('Teaspoon');
 INSERT INTO unit_of_measure (description) VALUES ('Tablespoon');
-INSERT INTO unit_of_measure (description) VALUES ('Pinch');
+INSERT INTO unit_of_measure (description) VALUES ('Pint');
 INSERT INTO unit_of_measure (description) VALUES ('Once');
 INSERT INTO unit_of_measure (description) VALUES ('Cup');
+INSERT INTO unit_of_measure (description) VALUES ('Each');
+INSERT INTO unit_of_measure (description) VALUES ('Dash');
+
+
 
