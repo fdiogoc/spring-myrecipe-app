@@ -1,4 +1,4 @@
-package guru.springframework.controllers.model;
+package guru.springframework.model;
 
 
 import javax.persistence.*;
