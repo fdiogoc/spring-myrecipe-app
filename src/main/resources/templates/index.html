@@ -10,7 +10,7 @@
 <div class="container-fluid" style="margin-top: 20px">
     <div class="row">
         <div class="col-md-6 offset-md-3">
-            <div class="card">
+            <div class="card border-primary">
                 <div class="card-header">
                     <h3 class="card-title">My Recipes!</h3>
                 </div>
@@ -22,16 +22,19 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Description</th>
+                                <th>View</th>
                             </tr>
                             </thead>
                             <tbody class="table-stripped">
                             <tr th:remove="all">
                                 <td th:text="${recipe.id}">123</td>
                                 <td th:text="${recipe.description}">Tasty Goodnees</td>
+                                <td><a href="#">View</a></td>
                             </tr>
                             <tr th:each="recipe : ${recipes}">
                                 <td th:text="${recipe.id}">334</td>
                                 <td th:text="${recipe.description}">Tasty Goodnees 3</td>
+                                <td><a href="#" th:href="@{'/recipe/show/' + ${recipe.id}}">View</a></td>
                             </tr>
                             </tbody>
 
