@@ -17,6 +17,8 @@ import java.util.Set;
 @Service
 public class RecipeServiceImpl implements RecipeService {
 
+
+
     private final RecipeRepository recipeRepository;
     private final RecipeCommandToRecipe recipeCommandToRecipe;
     private final RecipeToRecipeCommand recipeToRecipeCommand;
@@ -26,6 +28,8 @@ public class RecipeServiceImpl implements RecipeService {
         this.recipeCommandToRecipe = recipeCommandToRecipe;
         this.recipeToRecipeCommand = recipeToRecipeCommand;
     }
+
+
 
     @Override
     public Set<Recipe> getRecipes() {
@@ -50,6 +54,15 @@ public class RecipeServiceImpl implements RecipeService {
 
     @Override
     @Transactional
+    public RecipeCommand findCommandById(Long l) {
+        return recipeToRecipeCommand.convert(findById(l));
+    }
+
+
+
+
+    @Override
+    @Transactional
     public RecipeCommand saveRecipeCommand(RecipeCommand command) {
         Recipe detachedRecipe = recipeCommandToRecipe.convert(command);
 
@@ -57,4 +70,10 @@ public class RecipeServiceImpl implements RecipeService {
         log.debug("Saved RecipeId:" + savedRecipe.getId());
         return recipeToRecipeCommand.convert(savedRecipe);
     }
+
+    @Override
+    public void deleteById(Long l){
+        recipeRepository.deleteById(l);
+    }
+
 }
